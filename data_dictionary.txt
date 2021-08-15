@@ -1,0 +1,36 @@
+Table Name	Table Type	Field Name	Data Type	Description	Example
+scihub_data	Staging	download_id	INT	unique identifier for each download	1
+scihub_data	Staging	timestamp	TIMESTAMP	date and time of article downloaded at SciHub	2015-12-01 00:00:06
+scihub_data	Staging	doi	VARCHAR	the DOI (digital object indentifier) of the downloaded article (SciHub)	10.1109/SNPD.2007.355
+scihub_data	Staging	user_id	VARCHAR	the internal SciHub user identifier 	56ed2c394b76d
+scihub_data	Staging	user_country	VARCHAR	name of country of the SciHub user	Colombia
+scihub_data	Staging	user_city	VARCHAR	name of city of the SciHub user	Medellín
+scihub_data	Staging	user_location	VARCHAR	pair of coordinates of location of the SciHub user	6.2530408,-75.5645737
+scihub_data	Staging	day	INT	used for partitioning the raw data	1
+crossref_data	Staging	timestamp	TIMESTAMP	date and time of article download at SciHub	2015-12-01 00:00:06
+crossref_data	Staging	doi	VARCHAR	the DOI (digital object indentifier) of an article in Crossref	10.1001/archneur.1977.00500210065012
+crossref_data	Staging	title	VARCHAR	article title from Crossref	EEG Recognition of Aicardi's Syndrome
+crossref_data	Staging	published-print	INT	print publication year of article from Crossref	1995
+crossref_data	Staging	prefix	VARCHAR	article publisher DOI prefix from Crossref	10.1017
+crossref_data	Staging	publisher	VARCHAR	publisher name from Crossref	Cambridge University Press (CUP)
+downloads	Fact	download_id	INT	unique identifier for each download	1
+downloads	Fact	timestamp	TIMESTAMP	date and time of article downloaded at SciHub	2015-12-01 00:00:06
+downloads	Fact	doi	VARCHAR	the DOI (digital object indentifier) of the downloaded article (SciHub)	10.1109/SNPD.2007.355
+downloads	Fact	user_id	VARCHAR	the internal SciHub user identifier 	56ed2c394b76d
+users	Dimension	user_id	VARCHAR	the internal SciHub user identifier 	56ed2c394b76d
+users	Dimension	user_country	VARCHAR	name of country of the SciHub user	Colombia
+users	Dimension	user_city	VARCHAR	name of city of the SciHub user	Medellín
+users	Dimension	user_location	VARCHAR	pair of coordinates of location of the SciHub user	6.2530408,-75.5645737
+time	Dimension	timestamp	TIMESTAMP	date and time of article download at SciHub	2015-12-01 00:00:06
+time	Dimension	year	INT	year of article download at SciHub	2015
+time	Dimension	month	INT	month of article download at SciHub	12
+time	Dimension	week_of_year	INT	week of year of article download at SciHub	49
+time	Dimension	weekday	INT	weekday of article download at SciHub	2
+time	Dimension	day	INT	day of article download at SciHub	1
+time	Dimension	hour	INT	hour of article download at SciHub	0
+articles	Dimension	doi	VARCHAR	the DOI (digital object indentifier) of an article in Crossref	10.1001/archneur.1977.00500210065012
+articles	Dimension	title	VARCHAR	article title from Crossref	EEG Recognition of Aicardi's Syndrome
+articles	Dimension	published-print	INT	print publication year of article from Crossref	1995
+articles	Dimension	prefix	VARCHAR	article publisher DOI prefix from Crossref	10.1017
+publishers	Dimension	prefix	VARCHAR	publisher DOI prefix from Crossref	10.1017
+publishers	Dimension	publisher	VARCHAR	publisher name from Crossref	Cambridge University Press (CUP)
